@@ -22,7 +22,7 @@ $("span.order-detail-link[title='order detail']").click(function (event) {
 
             $("#username_detail").html("@" + response["user"]["username"]);
             $("#order_date_detail").html(date);
-            $("#quantiity_detail").html(response["quantity"]);
+            $("#quantity_detail").html(response["quantity"]);
             $("#address_detail").html(response["address"]);
             $("#payment_method_detail").html(
                 response["payment"]["payment_method"]

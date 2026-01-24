@@ -19,10 +19,10 @@ class PointController extends Controller
         $user = auth()->user();
         if ($user->point >= 50) {
             $user->coupon = $user->coupon + 1;
-            //$user->point = $user->point - 50;//FIXME2
+            $user->point - 50;//FIXME2
             $user->save();
 
-            $message = "Point converted successfully";
+            $message = "Points converted successfully";
 
             myFlasherBuilder(message: $message, success: true);
             return back();

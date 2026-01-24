@@ -10,6 +10,9 @@
 #wrapper #content-wrapper #content {
     flex: 1 0 auto;
 }
+h5.section-title.h1 {
+    color: #a77057 !important;
+}
 .point {
     color: #5a5c69;
     font-size: 7rem;

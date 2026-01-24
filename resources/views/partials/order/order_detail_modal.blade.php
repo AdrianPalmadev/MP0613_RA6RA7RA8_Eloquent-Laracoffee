@@ -36,8 +36,8 @@
                   <tr>
                     <td>
                       <div class="d-flex flex-column">
-                        <span class="heading d-block">quanity</span>
-                        <span class="subheadings" id="quantiity_detail">
+                        <span class="heading d-block">quantity</span>
+                        <span class="subheadings" id="quantity_detail">
                           <!-- quantity -->
                         </span>
                       </div>

@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{AuthController, HomeController, OrderController, PointController, ReviewController, ProductController, ProfileController, RajaOngkirController, TransactionController};
+use App\Http\Controllers\{AuthController, HomeController, OrderController, PointController, ReviewController, ProductController, ProfileController, ShippingController, TransactionController};
 
 /*
 |--------------------------------------------------------------------------
@@ -89,7 +89,7 @@ Route::middleware(['auth'])->group(function () {
     });
 
     // Shipping
-    Route::controller(RajaOngkirController::class)->group(function () {
+    Route::controller(ShippingController::class)->group(function () {
         Route::get("/shipping/province", "province");
         Route::get("/shipping/city/{province_id}", "city");
         Route::get("/shipping/cost/{origin}/{destination}/{quantity}/{courier}", "cost");

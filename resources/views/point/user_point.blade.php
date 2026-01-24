@@ -21,9 +21,10 @@
       <div id="content">
         <div class="container-fluid mt-5">
           <div class="text-center">
-            <div class="point mx-auto"><sup style="font-size: 4rem; left: 1rem;">
+            <h5 class="section-title h1">MY POINTS</h5>
+            <div class="point mx-auto"><sup style="font-size: 3rem; left: 1rem;">
                 {{ auth()->user()->point }}
-              </sup>/<sub style="font-size: 4rem; left: -1rem;">50</sub> </div>
+              </sup>/<sub style="font-size: 3rem; left: -1rem;">50</sub> </div>
             <p class="lead text-gray-800 mt-3">Your Point</p>
             <p class="text-gray-500 mb-2 mt-3">Get points every time you buy our products to get free products
             </p>
