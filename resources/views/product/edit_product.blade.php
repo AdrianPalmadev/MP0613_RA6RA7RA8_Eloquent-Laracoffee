@@ -105,7 +105,7 @@
                             <div class="form-group">
                               <label for="discount">Discount</label>
                               <input class="form-control @error('discount') is-invalid @enderror" type="text"
-                                id="discount" name="discount" placeholder="Masukkan price produk"
+                                id="discount" name="discount" placeholder="Enter product discount"
                                 value="{{ old('discount', $product->discount) }}">
                               @error('discount')
                               <div class="text-danger">{{ $message }}</div>
@@ -131,7 +131,7 @@
                             <div class="form-group">
                               <label for="description">Product Description</label>
                               <input class="form-control @error('description') is-invalid @enderror" id="description"
-                                placeholder="Masukkan description produk" name="description"
+                                placeholder="Enter product description" name="description"
                                 value="{{ old('description', $product->description) }}">
                               @error('description')
                               <div class="text-danger">{{ $message }}</div>

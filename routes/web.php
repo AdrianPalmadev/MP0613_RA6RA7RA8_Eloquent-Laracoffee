@@ -88,7 +88,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post("/order/approve_order/{order}/{product}", "approveOrder")->can("approve_order", App\Models\Order::class);
     });
 
-    // Ongkir
+    // Shipping
     Route::controller(RajaOngkirController::class)->group(function () {
         Route::get("/shipping/province", "province");
         Route::get("/shipping/city/{province_id}", "city");

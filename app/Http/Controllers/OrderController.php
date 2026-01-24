@@ -12,7 +12,6 @@ class OrderController extends Controller
     public function makeOrderGet(Product $product)
     {
         $title = "Make Order";
-        $product = $product;
 
         return view("/order/make_order", compact("title", "product"));
     }
@@ -24,18 +23,12 @@ class OrderController extends Controller
             'address' => 'required|max:255',
             'payment_method' => 'required|numeric',
             'quantity' => 'required|numeric|gt:0|lte:' . $product->stock,
-            'province' => 'required|numeric|gt:0',
-            'city' => 'required|numeric|gt:0',
-            'total_price' => 'required|gt:0',
-            'shipping_address' => 'required',
-            'coupon_used' => 'required|gte:0'
+            'total_price' => 'required|gt:0'
         ];
 
 
         $message = [
             'payment_method.required' => 'Please select the payment method',
-            'province.gt' => 'Please select the province',
-            'city.gt' => 'Please select the city',
             'quantity.lte' => 'sorry the current available stock is ' . $product->stock,
         ];
 
@@ -47,31 +40,35 @@ class OrderController extends Controller
         $validatedData = $request->validate($rules, $message);
 
         try {
+
             $data = [
                 "product_id" => $product->id,
-                "user_id" => auth()->user()->id,
-                "quantity" => $validatedData["quantity"],
+                "user_id" => (int) auth()->user()->id,
+                "quantity" => $validatedData["quantity"],//FIXME1
                 "address" => $validatedData["address"],
-                "shipping_address" => $validatedData["shipping_address"],
+                "shipping_address" => $validatedData["address"],
                 "total_price" => $validatedData["total_price"],
                 "payment_id" => $validatedData["payment_method"],
                 "note_id" => ($validatedData["payment_method"] == 1) ? 2 : 1,
                 "status_id" => 2,
                 "transaction_doc" => ($validatedData["payment_method"] == 1) ? env("IMAGE_PROOF") : null,
                 "is_done" => 0,
-                "coupon_used" => $validatedData["coupon_used"]
+                "coupon_used" => 0
             ];
 
             if ($validatedData["payment_method"] == 1) {
                 $data['bank_id'] = $validatedData["bank_id"];
             }
-
+            
             Order::create($data);
             $message = "Orders has been created!";
 
             myFlasherBuilder(message: $message, success: true);
             return redirect("/order/order_data");
+
         } catch (\Illuminate\Database\QueryException $exception) {
+            \Log::error('Order creation failed: ' . $exception->getMessage());
+            dd($exception->getMessage());
             return abort(500);
         }
     }
@@ -143,7 +140,7 @@ class OrderController extends Controller
         // return the user's coupon if using a coupon
         $user = Auth::user();
 
-        $new_coupon = (int)$user->coupon + (int)$order->coupon_used;
+        $new_coupon = (int) $user->coupon + (int) $order->coupon_used;
 
         $user->coupon = $new_coupon;
 
@@ -319,7 +316,7 @@ class OrderController extends Controller
 
         // add point to user
         $user = User::find($order->user_id);
-        $point_total = ($point_rules[$product->id] * (int)$order->quantity) + $user->point;
+        $point_total = ($point_rules[$product->id] * (int) $order->quantity) + $user->point;
         $user->point = $point_total;
         $user->save();
 
@@ -357,7 +354,7 @@ class OrderController extends Controller
     public function getProofOrder(Order $order)
     {
         $order->load("status");
-        return  $order;
+        return $order;
     }
 
 
@@ -416,9 +413,7 @@ class OrderController extends Controller
             'quantity' => 'required|numeric|gt:0|lte:' . $order->product->stock,
             'province' => 'required|numeric|gt:0',
             'city' => 'required|numeric|gt:0',
-            'total_price' => 'required|gt:0',
-            'shipping_address' => 'required',
-            'coupon_used' => 'required|gte:0'
+            'total_price' => 'required|gt:0'
         ];
 
 

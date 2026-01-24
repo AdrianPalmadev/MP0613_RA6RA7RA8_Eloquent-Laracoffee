@@ -24,7 +24,7 @@
     <div class="offer-dedicated-body-left">
       <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade active show" id="pills-reviews" role="tabpanel" aria-labelledby="pills-reviews-tab">
-          <!-- overview produk -->
+          <!-- overview product -->
           <div id="overview-product"
             class="bg-white rounded shadow-sm p-4 mb-4 clearfix restaurant-detailed-star-rating mt-3">
             <div class="row">
@@ -67,7 +67,7 @@
                 <?php
                 $rating_sum = round($rate, 2);
                 for ($i = 1; $i <= 5; $i++) {
-                  if ($i < $rating_sum) {
+                  if ($i <= $rating_sum) {
                     echo '<i class="fa fa-star rating-color"></i>';
                   } else if ($i - 1 < $rating_sum && $rating_sum < $i) {
                     echo '<i class="fa fa-star-half-stroke rating-color"></i>';

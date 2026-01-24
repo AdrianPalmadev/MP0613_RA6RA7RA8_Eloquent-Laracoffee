@@ -108,11 +108,11 @@ $("span.order-detail-link[title='order detail']").click(function (event) {
                 $("#content-kuponUsed").html(
                     `<span class="link-danger" style="cursor: pointer; ">` +
                         response["coupon_used"] +
-                        ` kupon</span> digunakan untuk pemesanan ini`
+                        ` coupon</span> was used for this order`
                 );
             } else {
                 $("#content-kuponUsed").html(
-                    `tidak ada kupon yang digunakan untuk pemesanan ini`
+                    `no coupon was used for this order`
                 );
             }
 

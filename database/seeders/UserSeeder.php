@@ -18,9 +18,9 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::create([
-            "fullname" => "Moh. Najib Fikri",
-            "username" => "pStar7",
-            "email" => "najibfikri13@gmail.com",
+            "fullname" => "James Anderson",
+            "username" => "jamesanderson",
+            "email" => "james.anderson@gmail.com",
             "password" => Hash::make("1234"),
             "image" => env("IMAGE_PROFILE"),
             "phone" => "08123456789123",
@@ -33,9 +33,9 @@ class UserSeeder extends Seeder
         ]);
 
         User::create([
-            "fullname" => "Patrick Star",
-            "username" => "its_me",
-            "email" => "member@gmail.com",
+            "fullname" => "Sarah Johnson",
+            "username" => "sarahjohnson",
+            "email" => "sarah.johnson@gmail.com",
             "password" => Hash::make("1234"),
             "image" => env("IMAGE_PROFILE"),
             "phone" => "082918391823",
@@ -48,9 +48,9 @@ class UserSeeder extends Seeder
         ]);
 
         User::create([
-            "fullname" => "Squidy",
-            "username" => "goodman",
-            "email" => "squidy@gmail.com",
+            "fullname" => "Michael Brown",
+            "username" => "michaelbrown",
+            "email" => "michael.brown@gmail.com",
             "password" => Hash::make("1234"),
             "image" => env("IMAGE_PROFILE"),
             "phone" => "019292823382",

@@ -119,8 +119,8 @@
           </div>
           <div class="col-md-4">
             <div class="p-2 text-center">
-              <div class="Produk">
-                <h1 style="font-size: 18px;">Produk</h1>
+              <div class="Product">
+                <h1 style="font-size: 18px;">Product</h1>
                 <img id="image_product_detail" width="150px">
                 <span class="d-block my-2" style="font-size: 15px;" id="product_name_detail"></span>
                 <div class="d-flex justify-content-center align-items-cetner mb-3">

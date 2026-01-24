@@ -121,7 +121,7 @@
                               <label for="quantity">Quantity</label>
                               <input class="form-control @error('quantity') is-invalid @enderror" type="number" min="0"
                                 id="quantity" name="quantity" data-productId="{{ $order->product_id }}"
-                                placeholder="Masukkan jumlah produk" value="{{ old('quantity', $order->quantity) }}"
+                                placeholder="Enter product quantity" value="{{ old('quantity', $order->quantity) }}"
                                 onchange="myCounter()">
                               @error('address')
                               <div class="text-danger">{{ $message }}</div>
