@@ -40,33 +40,24 @@ To run Laracoffee locally, follow these steps:
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/snykk/Laracoffee.git
+   git clone https://github.com/Stucom-Pelai/MP0613_RA6RA7RA8_Eloquent-Laracoffee.git
    ```
-2. Change to the project directory
-    ```bash
-    cd laracoffee
-    ```
-3. Install the project dependencies
+2. Install the project dependencies
     ```bash
     composer install
-    npm install
     ```
-4. Copy the .env.example file to .env and configure your environment variables, including your database settings and any other necessary configuration.
+3. Copy the .env.example file to .env and configure your environment variables, including your database settings and any other necessary configuration.
     ```bash
     copy .env.example .env
     ```
-5. Generate an application key
+4. Generate an application key
     ```bash
     php artisan key:generate
     ```
 
-6. Create a symbolic link for the storage directory
+5. Create a symbolic link for the storage directory
    ```bash
    php artisan storage:link
-   ```
-8. Set the filesystem disk to public in the .env file
-   ```bash
-   FILESYSTEM_DISK=public
    ```
 6. Migrate the database
     ```bash
@@ -88,14 +79,6 @@ To run Laracoffee locally, follow these steps:
 - Make a test order to see the order processing workflow.
 - Access the admin panel by log in with admin credentials (if seeded).
 - Manage products and orders through the admin panel.
-
-## Contributing
-Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
-1. Fork the repository.
-2. Create a new branch for your feature or bugfix: `git checkout -b feature-name`.
-3. Make your changes and commit them: `git commit -m 'Add some feature'`.
-4. Push to your fork: `git push origin feature-name`.
-5. Create a pull request on the original repository.
 
 ## License
 This project is licensed under the [MIT License](https://github.com/snykk/Laracoffee/blob/master/LICENSE).
@@ -151,5 +134,3 @@ This project is licensed under the [MIT License](https://github.com/snykk/Laraco
 ##### Submit a Review
 !["Submit a Review"](/storage/assets/User/submit_review.PNG)
 
-## In Summary
- Feel free to explore the application and give it a try yourself. If you have any questions or encounter any issues, please don't hesitate to reach out. Your feedback is greatly appreciated. Happy exploring!!!
