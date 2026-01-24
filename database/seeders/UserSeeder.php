@@ -40,10 +40,10 @@ class UserSeeder extends Seeder
             "image" => env("IMAGE_PROFILE"),
             "phone" => "082918391823",
             "gender" => "M",
-            "address" => "Shell road number 18",
+            "address" => "Shell road number 18, Brighton",
             "role_id" => 2,
             "coupon" => 0,
-            "point" => 0,
+            "point" => 100,
             'remember_token' => Str::random(30),
         ]);
 
@@ -55,10 +55,10 @@ class UserSeeder extends Seeder
             "image" => env("IMAGE_PROFILE"),
             "phone" => "019292823382",
             "gender" => "M",
-            "address" => "Small healt",
+            "address" => "Small healt 14, London",
             "role_id" => 2,
             "coupon" => 0,
-            "point" => 0,
+            "point" => 200,
             'remember_token' => Str::random(30),
         ]);
 
